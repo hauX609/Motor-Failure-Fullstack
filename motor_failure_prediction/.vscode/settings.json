@@ -1,0 +1,5 @@
+{
+  "python.defaultInterpreterPath": "/Users/harshitgupta/Downloads/Projects/motor_failure_prediction/venv/bin/python3",
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda"
+}
