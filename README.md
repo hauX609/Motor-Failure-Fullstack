@@ -86,7 +86,7 @@ python3 -m py_compile app.py
 ```
 
 ## License
-MIT License. See `motor_failure_prediction/LICENSE`.
+MIT License. See `LICENSE`.
 
 ## Contributing
 See `CONTRIBUTING.md` for branch and PR guidelines.
