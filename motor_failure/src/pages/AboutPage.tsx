@@ -36,7 +36,7 @@ const AboutPage: React.FC = () => {
             to predict motor failures before they happen, reducing downtime and maintenance costs.
           </p>
           <motion.a
-            href="https://github.com"
+            href="https://github.com/hauX609/Motor-Failure-Fullstack"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.03 }}
