@@ -90,3 +90,9 @@ MIT License. See `motor_failure_prediction/LICENSE`.
 
 ## Contributing
 See `CONTRIBUTING.md` for branch and PR guidelines.
+
+## Repository Standards
+- Security policy: `SECURITY.md`
+- Issue templates: `.github/ISSUE_TEMPLATE/`
+- PR template: `.github/pull_request_template.md`
+- Release process: `RELEASE_CHECKLIST.md`
