@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100% / 0.6;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100% / 0.8;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 215 90% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 94%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91% / 0.7;
+    --input: 220 13% 91%;
+    --ring: 215 90% 52%;
+
+    --radius: 1rem;
+
+    --glass-bg: 0 0% 100% / 0.65;
+    --glass-border: 0 0% 0% / 0.06;
+    --glass-highlight: 0 0% 100% / 0.9;
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+    --glass-inset: inset 0 0 0 1px rgba(255, 255, 255, 0.9);
+
+    --status-healthy: 142 71% 45%;
+    --status-warning: 38 92% 50%;
+    --status-critical: 0 84% 60%;
+
+    --chart-1: 215 90% 52%;
+    --chart-2: 142 71% 45%;
+    --chart-3: 38 92% 50%;
+    --chart-4: 0 84% 60%;
+    --chart-5: 262 83% 58%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Mesh gradient orb colors */
+    --orb-1: 204 94% 94%;
+    --orb-2: 270 100% 95%;
+    --orb-3: 204 94% 94%;
+    --orb-4: 270 100% 95%;
+  }
+
+  .dark {
+    --background: 224 30% 7%;
+    --foreground: 210 40% 95%;
+
+    --card: 224 30% 12% / 0.4;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 224 30% 12% / 0.8;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 215 90% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 20% 16%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 224 20% 16%;
+    --muted-foreground: 218 11% 55%;
+
+    --accent: 224 20% 18%;
+    --accent-foreground: 210 40% 95%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 224 20% 18% / 0.6;
+    --input: 224 20% 18%;
+    --ring: 215 90% 58%;
+
+    --glass-bg: 224 30% 10% / 0.35;
+    --glass-border: 224 20% 25% / 0.3;
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --glass-inset: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+    --status-healthy: 142 71% 50%;
+    --status-warning: 38 92% 55%;
+    --status-critical: 0 84% 65%;
+
+    --chart-1: 215 90% 62%;
+    --chart-2: 142 71% 55%;
+    --chart-3: 38 92% 55%;
+    --chart-4: 0 84% 62%;
+    --chart-5: 262 83% 65%;
+
+    --sidebar-background: 224 30% 10%;
+    --sidebar-foreground: 210 40% 90%;
+    --sidebar-primary: 215 90% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 20% 16%;
+    --sidebar-accent-foreground: 210 40% 95%;
+    --sidebar-border: 224 20% 18%;
+    --sidebar-ring: 215 90% 58%;
+
+    --orb-1: 215 85% 45%;
+    --orb-2: 262 70% 40%;
+    --orb-3: 142 50% 35%;
+    --orb-4: 38 70% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+
+  .status-healthy {
+    color: hsl(var(--status-healthy));
+  }
+  .status-warning {
+    color: hsl(var(--status-warning));
+  }
+  .status-critical {
+    color: hsl(var(--status-critical));
+  }
+
+  .bg-status-healthy {
+    background-color: hsl(var(--status-healthy));
+  }
+  .bg-status-warning {
+    background-color: hsl(var(--status-warning));
+  }
+  .bg-status-critical {
+    background-color: hsl(var(--status-critical));
+  }
+
+  .pulse-live {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .glass-input {
+    @apply rounded-xl px-4 py-3 text-sm transition-all duration-200 outline-none;
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    backdrop-filter: blur(24px) saturate(150%);
+    background: hsl(var(--glass-bg));
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--glass-inset);
+  }
+  .glass-input:focus {
+    border-color: hsl(var(--ring));
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.15), var(--glass-inset);
+  }
+
+  /* Mesh gradient orbs */
+  .mesh-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    will-change: transform;
+  }
+  .dark .mesh-orb {
+    opacity: 0.2;
+  }
+
+  .mesh-orb-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, hsl(var(--orb-1) / 0.6) 0%, transparent 70%);
+    top: -10%;
+    left: -5%;
+    animation: orb-drift-1 25s ease-in-out infinite;
+    will-change: transform;
+  }
+  .mesh-orb-2 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, hsl(var(--orb-2) / 0.5) 0%, transparent 70%);
+    top: 20%;
+    right: -8%;
+    animation: orb-drift-2 30s ease-in-out infinite;
+    will-change: transform;
+  }
+  .mesh-orb-3 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, hsl(var(--orb-3) / 0.4) 0%, transparent 70%);
+    bottom: 5%;
+    left: 20%;
+    animation: orb-drift-3 28s ease-in-out infinite;
+    will-change: transform;
+  }
+  .mesh-orb-4 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, hsl(var(--orb-4) / 0.35) 0%, transparent 70%);
+    bottom: -5%;
+    right: 15%;
+    animation: orb-drift-4 22s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  /* Neon glow for chart strokes */
+  .recharts-neon-glow .recharts-line .recharts-curve,
+  .recharts-neon-glow .recharts-area .recharts-area-curve {
+    filter: drop-shadow(0 0 4px hsl(var(--primary) / 0.5)) drop-shadow(0 0 8px hsl(var(--primary) / 0.25));
+  }
+
+  .recharts-line-curve,
+  .recharts-area-line {
+    filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.6));
+  }
+
+  /* Dashed reference grid */
+  .recharts-neon-glow .recharts-cartesian-grid-horizontal line {
+    stroke-dasharray: 4 6;
+    opacity: 0.12;
+  }
+  .recharts-neon-glow .recharts-cartesian-grid-vertical line {
+    display: none;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(60px, 40px) scale(1.05); }
+  50% { transform: translate(30px, 80px) scale(0.95); }
+  75% { transform: translate(-30px, 30px) scale(1.02); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-50px, 30px) scale(1.03); }
+  50% { transform: translate(-70px, -40px) scale(0.97); }
+  75% { transform: translate(20px, -20px) scale(1.05); }
+}
+
+@keyframes orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -50px) scale(1.04); }
+  66% { transform: translate(-30px, -20px) scale(0.96); }
+}
+
+@keyframes orb-drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.06); }
+  66% { transform: translate(50px, -30px) scale(0.98); }
+}

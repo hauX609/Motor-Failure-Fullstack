@@ -1,0 +1,28 @@
+# Node / frontend
+node_modules/
+dist/
+*.local
+
+# Python / backend
+__pycache__/
+*.py[cod]
+*.log
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+*.db
+*.db-journal
+*.pkl
+*.keras
+*.h5
+
+# Data and generated assets
+motor_failure_prediction/DataSet/
+motor_failure_prediction/img/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
